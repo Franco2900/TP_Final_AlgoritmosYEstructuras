@@ -1,10 +1,22 @@
 #ifndef LISTALOCALES_H_INCLUDED
 #define LISTALOCALES_H_INCLUDED
+
+//#include <vector>
+//#include <string>
+
 #include "local.h"
 
-typedef struct Nodo{
-	Local dato;
+using namespace std;
+
+ struct Nodo{
+	Local *dato;
 	Nodo *siguiente;
+
+	Nodo(){};
+	Nodo(Local *loc){
+	    dato = loc;
+	    siguiente = NULL;
+	}
 };
 
 //CONSTRUCTOR
@@ -21,8 +33,11 @@ Nodo getSiguiente(Nodo &lista);
 void setDato(Nodo &lista, Nodo *siguiente);
 
 //METODOS
-void insertarLista(Nodo *&lista, int n);
-void mostrarLista(Nodo *lista);
+void insertarLista(Nodo *&lista, Local *dato);
+void insertXCasaMatriz(Nodo *&lista, Local *local);
+void insertXFact(Nodo *&lista, Local *local);
+void insertXArt(Nodo *&lista, Local *local);
+void mostrarLista(Nodo *&lista);
 
 
 

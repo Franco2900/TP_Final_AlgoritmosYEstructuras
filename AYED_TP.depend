@@ -8,3 +8,42 @@
 
 1600546103 c:\users\josé luis\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\local.h
 
+1602004026 source:c:\users\j\desktop\unla-b\ayed\tps\tp cuatrimestral\tp_final_algoritmosyestructuras\carga.cpp
+	<iostream>
+	<cstdio>
+	<dirent.h>
+	<fstream>
+	<string>
+	<vector>
+	"carga.h"
+	"listaLocal.h"
+	"local.h"
+
+1601996810 c:\users\j\desktop\unla-b\ayed\tps\tp cuatrimestral\tp_final_algoritmosyestructuras\carga.h
+	<vector>
+	<string>
+	"listaLocal.h"
+
+1602004002 c:\users\j\desktop\unla-b\ayed\tps\tp cuatrimestral\tp_final_algoritmosyestructuras\listalocal.h
+	"local.h"
+
+1601997242 c:\users\j\desktop\unla-b\ayed\tps\tp cuatrimestral\tp_final_algoritmosyestructuras\local.h
+	<string>
+
+1601996810 source:c:\users\j\desktop\unla-b\ayed\tps\tp cuatrimestral\tp_final_algoritmosyestructuras\main.cpp
+	<iostream>
+	<cstdio>
+	<iomanip>
+	"menu.h"
+
+1602003811 c:\users\j\desktop\unla-b\ayed\tps\tp cuatrimestral\tp_final_algoritmosyestructuras\menu.h
+	<string>
+	"listaLocal.h"
+
+1601996939 source:c:\users\j\desktop\unla-b\ayed\tps\tp cuatrimestral\tp_final_algoritmosyestructuras\local.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	"local.h"
+

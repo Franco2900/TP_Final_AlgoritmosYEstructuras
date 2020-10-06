@@ -32,6 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="carga.cpp" />
+		<Unit filename="carga.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="listaLocal.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="listaLocal.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -40,6 +47,18 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="menu.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ranking.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ranking.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

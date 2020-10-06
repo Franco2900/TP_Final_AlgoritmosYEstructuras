@@ -4,20 +4,15 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <algorithm>
+
+
+#include "carga.h"
+#include "listaLocal.h"
+#include "local.h"
 
 using namespace std;
 
-void cargaDatos();
-vector<string> cargaArchivo();
-void lectura(string lista);
-bool validarLinea(string tex);
-vector<string> split(string str );
 
-void cargaDatos(){
-    vector<string> listaArchivos = cargaArchivo();                   // se cargan todos los archivos
-    for_each(listaArchivos.begin(), listaArchivos.end(), lectura);  // cada archivo se lee y agregan los locales a las listas
-}
 vector<string> cargaArchivo(){
     DIR * carpeta;
     struct dirent * elemento;                               //es una estructura de elementos que se va a usar para listar los archivos
@@ -33,45 +28,45 @@ vector<string> cargaArchivo(){
             }
     } else{
         cout << "No se puedo abrir la carpeta "+carp << endl;
-        exit(1);
+        exit(1);                                               //  <= Ver si está bien esta salida
     }
     closedir(carpeta);
    return archivos;
 }
-void lectura(string arch){
-    string datos = ("datos/"+arch);
-    ifstream archivo;
-    archivo.open(datos, ios::in);
-    if(archivo.fail()){
-        cout<< "No se pudo abrir el archivo "+datos << endl ;
-        exit(1);
+Nodo* buildListLocales(vector<string> arch){
+    Nodo *nodo = NULL;
+
+    for(int i=0;i<arch.size();i++){
+
+            string datos = ("datos/"+arch[i]);
+            ifstream archivo;
+            archivo.open(datos, ios::in);
+            if(archivo.fail()){
+                cout<< "No se pudo abrir el archivo: "+datos << endl ;
+                exit(1);
+            }
+            string texto;
+            vector<string> resultados;
+            while(!archivo.eof()){
+                getline(archivo, texto);
+                if (validarLinea(texto)){
+                    cout << "Existe algun dato erroneo en el archivo: "+ datos << endl;
+                    cout << "No se cargara la siguiente linea: "+ texto << endl;
+                    cout << "\n" <<endl;
+                }
+                else{
+                    resultados = cortar(texto);
+                    reemplazo(resultados[3], ',', '.');
+                    reemplazo(resultados[4], ',', '.');
+                    Local *nuevo = new Local(stoi(resultados[0]),resultados[1] ,stoi(resultados[2]), stof(resultados[3]), stof(resultados[4]), stoi(resultados[5]));
+                    insertarLista(nodo, nuevo);
+                }
+            }
+            archivo.close();
     }
-    string texto;
-    vector<string> resultados;
-    while(!archivo.eof()){
-        getline(archivo, texto);
-        if (validarLinea(texto)){
-            cout << "Existe algun dato erroneo en el archivo "+ datos << endl;
-            cout<<"No se cargará la siguiente linea: "+ texto << endl;
-        }
-        else{
-            resultados = split(texto);
-            //enviar los resultados a ser convertidos en estructura de local y luego agregar a la lista de locales
-        }
-    }
-    archivo.close();
+    return nodo;
 }
-bool validarLinea(string tex){
-    bool flag = false;
-    int j=0;
-    for(int i=0;i<tex.size();i++){                          // este for cuenta los '-' y valida si hay 2 seguidos
-        if (tex[i]== '-') j++;
-        if (tex[i]== '-' && tex[i+1] == '-') flag=true;
-    }
-    if (j!=6) flag = true;
-    return flag;
-}
-vector<string> split(string str ) {
+vector<string> cortar(string str ) {
     char pattern = '-';                                     //delimitador
     int posInit = 0;                                        //posicion iniicial del recorrido
     int posFound = 0;                                       //posicion final del recorrido
@@ -84,4 +79,19 @@ vector<string> split(string str ) {
         resultados.push_back(splitted);                     //inserta el string al final del vector
     }
     return resultados;
+}
+void reemplazo(string &tex, char a, char b){
+    for(int i=0;i<tex.size();i++){                          // reemplazo un caracter del string a por b
+        if (tex[i]== a) tex[i]=b;
+    }
+}
+bool validarLinea(string tex){
+    bool flag = false;
+    int j=0;
+    for(int i=0;i<tex.size();i++){                          // este for cuenta los '-' y valida si hay 2 seguidos
+        if (tex[i]== '-') j++;
+        if (tex[i]== '-' && tex[i+1] == '-') flag=true;
+    }
+    if (j!=6) flag = true;
+    return flag;
 }

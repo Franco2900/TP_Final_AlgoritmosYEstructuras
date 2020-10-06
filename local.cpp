@@ -24,16 +24,16 @@ using namespace std;
 */
 /********************************************************************************************************************************/
 
-struct LocalStruct{
-
-    int codigoSucursal;
-	tProvincia provincia;
-	int cantidadArticulos;
-	float monto;
-	float metros;
-	int casaMatriz;
-
-};
+//struct LocalStruct{
+//
+//    int codigoSucursal;
+//	tProvincia provincia;
+//	int cantidadArticulos;
+//	float monto;
+//	float metros;
+//	int casaMatriz;
+//
+//};
 
 //Constructores
 //Constructor para que el usuario pueda crear locales
@@ -52,71 +52,71 @@ struct LocalStruct{
 }*/
 
 //Constructor para crear locales cuando se lee el archivo
-Local crearLocal(int codigoSucursal, tProvincia provincia, int cantidadArticulos, float monto, float metros, int casaMatriz){
-
-    struct LocalStruct* Local = new LocalStruct;
-
-    Local->codigoSucursal    = codigoSucursal;
-    Local->provincia         = provincia;
-    Local->cantidadArticulos = cantidadArticulos;
-    Local->monto             = monto;
-    Local->metros            = metros;
-    Local->casaMatriz        = casaMatriz;
-
-    return Local;
-}
+//Local crearLocal(int codigoSucursal, tProvincia provincia, int cantidadArticulos, float monto, float metros, int casaMatriz){
+//
+//    struct LocalStruct* Local = new LocalStruct;
+//
+//    Local->codigoSucursal    = codigoSucursal;
+//    Local->provincia         = provincia;
+//    Local->cantidadArticulos = cantidadArticulos;
+//    Local->monto             = monto;
+//    Local->metros            = metros;
+//    Local->casaMatriz        = casaMatriz;
+//
+//    return Local;
+//}
 
 //Destructor
-void destruirLocal(Local local){
+void destruirLocal(Local* local){
     delete local;
 }
 
 
 //Getters y Setters
-int getCodigoSucursal(Local local){
+int getCodigoSucursal(Local* local){
     return local->codigoSucursal;
 }
-void setCodigoSucursal(Local local,int codigoSucursal){
+void setCodigoSucursal(Local* local,int codigoSucursal){
     if(codigoSucursal > 0) local->codigoSucursal = codigoSucursal;
 }
 
 
-tProvincia getProvincia(Local local){
+string getProvincia(Local *local){
     return local->provincia;
 }
-void setProvincia(Local local, tProvincia provincia){
-    local->provincia = provincia;
+void setProvincia(Local *local, string provincia){
+   local->provincia = provincia;
 }
 
 
-int getCantidadArticulos(Local local){
+int getCantidadArticulos(Local* local){
     return local->cantidadArticulos;
 }
-void setCantidadArticulos(Local local, int cantidadArticulos){
+void setCantidadArticulos(Local* local, int cantidadArticulos){
     if(cantidadArticulos >= 0) local->cantidadArticulos = cantidadArticulos;
 }
 
 
-float getMonto(Local local){
+float getMonto(Local* local){
     return local->monto;
 }
-void setMonto(Local local, float monto){
+void setMonto(Local* local, float monto){
     if(monto >= 0) local->monto = monto;
 }
 
 
-float getMetros(Local local){
+float getMetros(Local* local){
     return local->metros;
 }
-void setMetros(Local local, float metros){
+void setMetros(Local* local, float metros){
     if(metros > 0) local->metros = metros;
 }
 
 
-int getCasaMatriz(Local local){
+int getCasaMatriz(Local* local){
     return local->casaMatriz;
 }
-void setCasaMatriz(Local local, int casaMatriz){
+void setCasaMatriz(Local* local, int casaMatriz){
     if(casaMatriz > 0) local->casaMatriz = casaMatriz;
 }
 
@@ -124,7 +124,7 @@ void setCasaMatriz(Local local, int casaMatriz){
 
 //Métodos
 
-void mostrarLocal(Local local){
+void mostrarLocal(Local* local){
     cout << "Codigo sucursal: "     << local->codigoSucursal    << endl;
     cout << "Provincia: "           << local->provincia         << endl;
     cout << "Cantidad Articulos: "  << local->cantidadArticulos << endl;
