@@ -47,3 +47,42 @@
 	<iostream>
 	"local.h"
 
+1602701607 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\local.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	"local.h"
+
+1602891643 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\local.h
+	<string>
+
+1602701607 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\main.cpp
+	<iostream>
+	<cstdio>
+	<iomanip>
+	"menu.h"
+
+1602701607 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\menu.h
+	<string>
+	"listaLocal.h"
+
+1602701607 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\listalocal.h
+	"local.h"
+
+1602873878 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\carga.cpp
+	<iostream>
+	<cstdio>
+	<dirent.h>
+	<fstream>
+	<string>
+	<vector>
+	"carga.h"
+	"listaLocal.h"
+	"local.h"
+
+1602701607 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\carga.h
+	<vector>
+	<string>
+	"listaLocal.h"
+

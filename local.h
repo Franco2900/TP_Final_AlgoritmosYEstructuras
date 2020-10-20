@@ -22,13 +22,6 @@
 */
 /********************************************************************************************************************************/
 
-/*
-    NOTAS:
-    Fijarse si CABA se considera provincia
-    Fijarse si esta bien el struct y el constructor
-    Buscar como trabajar con el enum
-*/
-
 using namespace std;
 struct Local{
     int codigoSucursal;
