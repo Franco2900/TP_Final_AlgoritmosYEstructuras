@@ -15,11 +15,12 @@
 using namespace std;
 
 void menu(){
-    vector<string> archivos = cargaArchivo();
-    Nodo* listaLocales = buildListLocales(archivos);
+    vector<string> archivos = cargaArchivo();         //Este vector dinamico va a tener los nombres de los archivos de la carpeta datos
+    Nodo* listaLocales = buildListLocales(archivos);  //Con el vector de antes, creo los locales y una lista con estos
     string franquicia;
     cout<< "\nPor favor, ingrese el nombre de la franquicia: ";
     cin >> franquicia;
+    fflush(stdin);
     system("CLS");
     menuPrincipal(listaLocales, franquicia);
     system("CLS");
@@ -27,7 +28,7 @@ void menu(){
     system("pause");
     system("CLS");
 }
-void menuPrincipal(Nodo*& listaLocales, string franquicia){
+void menuPrincipal(Nodo*& listaLocales, string franquicia){ //Muestra opciones a elegir con la lista de locales
     int opcion=99;
     while(opcion !=0){
         system("CLS");
@@ -64,12 +65,12 @@ void menuPrincipal(Nodo*& listaLocales, string franquicia){
 }
 void menuRankingFacYArtVend(Nodo*& listaLocales, int opc){
     int opcion=77;
-    vector<string> provincias = listaProv(listaLocales);
+    vector<string> provincias = listaProv(listaLocales); //Recorre la lista de locales y crea una vector con los nombres de las provincias en donde están estos
     string tipoRanking;
     if(opc ==1) tipoRanking = "Facturacion";
     if(opc ==2) tipoRanking = "Venta de articulos";
     cout << "El ranking de "<<tipoRanking<<" esta disponible para las siguientes provincias: \n"<<endl;
-    for (int i=0;i<provincias.size();i++){
+    for (int i=0;i<provincias.size();i++){      //Muestra las provincias
         cout << (i+1) <<" - "<< provincias[i]<<"."<<endl;
     }
     cout << "\n88 - VER TODAS." <<endl;

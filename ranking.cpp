@@ -11,7 +11,7 @@ using namespace std;
 //############ RANKING => FACTURACION Y VENTAS
 
 
-void rankingAllProvFA(Nodo *&lista, vector<string> prov, int opc){
+void rankingAllProvFA(Nodo *&lista, vector<string> prov, int opc){ //Crea un ranking provincial de cada provincia
     string tipoRanking;
     if(opc ==1) tipoRanking = "Facturacion";
     if(opc ==2) tipoRanking = "Venta de articulos";
@@ -27,7 +27,7 @@ void rankingAllProvFA(Nodo *&lista, vector<string> prov, int opc){
     system("pause");
 };
 
-Nodo* rankingProvFA(Nodo*& lista, string provincia, int opc){
+Nodo* rankingProvFA(Nodo*& lista, string provincia, int opc){ //Crea un ranking con los locales de una provincia (el ranking puede ser por facturación o articulos vendidos)
     Nodo* listaRanking = NULL;
     Nodo* actual = new Nodo();
     actual = lista;
@@ -41,7 +41,7 @@ Nodo* rankingProvFA(Nodo*& lista, string provincia, int opc){
     }
     return listaRanking;
 };
-Nodo* rankingNacFA(Nodo *&lista, int opc){
+Nodo* rankingNacFA(Nodo *&lista, int opc){ //Crea un ranking con los locales a nivel nacional (el ranking puede ser por facturación o articulos vendidos)
     Nodo* listaRanking = NULL;
     Nodo* actual = new Nodo();
     actual = lista;
@@ -54,12 +54,12 @@ Nodo* rankingNacFA(Nodo *&lista, int opc){
     return listaRanking;
 };
 //############ RANKING => RENDIMIENTO
-void rankingRendimento(Nodo *&lista){
+void rankingRendimento(Nodo *&lista){ //Ranking de las casas matrices basadas en su rendimiento
     Nodo* listaRanking = localesXMatriz(lista);
     vector<int> matriz = listaMatriz(listaRanking);
     mostrarRankingRendimiento(listaRanking,matriz);
 };
-Nodo* localesXMatriz(Nodo *&lista){
+Nodo* localesXMatriz(Nodo *&lista){ //Agrupa locales por matriz
     Nodo* listaRanking = NULL;
     Nodo* actual = new Nodo();
     actual = lista;
@@ -99,7 +99,7 @@ float rendimiento(Nodo*& lista, int matriz){
     }
     return  monto/metros;
 };
-vector<int> listaMatriz(Nodo *&lista){
+vector<int> listaMatriz(Nodo *&lista){ //Separa las casas matrices de la lista
     vector<int> matriz;
     Nodo * actual = new Nodo();
     actual = lista;
@@ -111,7 +111,7 @@ vector<int> listaMatriz(Nodo *&lista){
     ordenMatrizRendimiento(lista, matriz);
     return matriz;
 };
-vector<string> listaProv(Nodo *&lista){
+vector<string> listaProv(Nodo *&lista){ //El vector va a almacenar el nombre de las provincias que tengan locales
     vector<string> provincias;
     Nodo * actual = new Nodo();
     actual = lista;
