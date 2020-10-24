@@ -13,14 +13,10 @@ using namespace std;
 
 void rankingAllProvFA(Nodo *&lista, vector<string> prov, int opc){ //Crea un ranking provincial de cada provincia
     string tipoRanking;
-    if(opc ==1) tipoRanking = "Facturacion";
-    if(opc ==2) tipoRanking = "Venta de articulos";
     for(int i=0;i<prov.size();i++){
         Nodo* ranking = rankingProvFA(lista, prov[i], opc);
-        cout << "\n" << endl;
         cout << "##########################################"<<endl;
-        cout << "\n" << endl;
-        cout << "Ranking de "<<tipoRanking<<" de la provincia "<<prov[i]<<endl;
+        cout << "Ranking de la provincia "<<prov[i]<<endl;
         mostrarLista(ranking);
 
     }
@@ -31,6 +27,8 @@ Nodo* rankingProvFA(Nodo*& lista, string provincia, int opc){ //Crea un ranking 
     Nodo* listaRanking = NULL;
     Nodo* actual = new Nodo();
     actual = lista;
+    if (opc == 1)cout << "RANKING DE FACTURACION"<< endl;
+    if (opc == 2)cout << "RANKING DE VENTA DE ARTICULOS"<< endl;
     while(actual !=NULL){
         if(actual->dato->provincia == provincia){
             Local* loc = new Local(actual->dato);
@@ -45,6 +43,8 @@ Nodo* rankingNacFA(Nodo *&lista, int opc){ //Crea un ranking con los locales a n
     Nodo* listaRanking = NULL;
     Nodo* actual = new Nodo();
     actual = lista;
+    if (opc == 1)cout << "RANKING DE FACTURACION"<< endl;
+    if (opc == 2)cout << "RANKING DE VENTA DE ARTICULOS"<< endl;
     while(actual !=NULL){
         Local* loc = new Local(actual->dato);
         if (opc == 1)insertXFact(listaRanking, loc);

@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cstdio>
-//#include <dirent.h>
-//#include <fstream>
 #include <string>
 #include <vector>
 #include <iomanip>
@@ -18,13 +16,13 @@ void menu(){
     vector<string> archivos = cargaArchivo();         //Este vector dinamico va a tener los nombres de los archivos de la carpeta datos
     Nodo* listaLocales = buildListLocales(archivos);  //Con el vector de antes, creo los locales y una lista con estos
     string franquicia;
-    cout<< "\nPor favor, ingrese el nombre de la franquicia: ";
-    cin >> franquicia;
+    cout<< "Por favor, ingrese el nombre de la franquicia: ";
+    getline (cin, franquicia);
     fflush(stdin);
     system("CLS");
     menuPrincipal(listaLocales, franquicia);
     system("CLS");
-    cout << "\nMensaje de despedida"<<endl;
+    cout << "Gracias por contratar nuestro servicio"<<endl;
     system("pause");
     system("CLS");
 }
@@ -39,17 +37,15 @@ void menuPrincipal(Nodo*& listaLocales, string franquicia){ //Muestra opciones a
         cout << "0 - SALIR" << endl;
         cout << "\nElija el ranking a realizar: ";
         cin >> opcion ;
+        fflush(stdin);
+        if(cin.fail()){cin.clear(); menuPrincipal(listaLocales, franquicia);}
         switch (opcion){
             case (1):
-                system("CLS");
                 menuRankingFacYArtVend(listaLocales, opcion);
-
                 system("CLS");
                 break;
             case (2):
-                system("CLS");
                 menuRankingFacYArtVend(listaLocales, opcion);
-
                 system("CLS");
                 break;
             case (3):
@@ -64,6 +60,7 @@ void menuPrincipal(Nodo*& listaLocales, string franquicia){ //Muestra opciones a
     }
 }
 void menuRankingFacYArtVend(Nodo*& listaLocales, int opc){
+    system("CLS");
     int opcion=77;
     vector<string> provincias = listaProv(listaLocales); //Recorre la lista de locales y crea una vector con los nombres de las provincias en donde están estos
     string tipoRanking;
@@ -78,11 +75,11 @@ void menuRankingFacYArtVend(Nodo*& listaLocales, int opc){
     cout << "\n0  - VOLVER." << endl;
     cout << "\nIngrese su opcion: ";
     cin>>opcion;
+    fflush(stdin);
     if(opcion !=0){
         if(opcion == 88 ){
             system("CLS");
             rankingAllProvFA(listaLocales, provincias,  opc);
-            system("pause");
             system("CLS");
         }
         if(opcion == 99){
