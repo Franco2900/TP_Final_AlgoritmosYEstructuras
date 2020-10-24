@@ -109,4 +109,5 @@ void mostrarLista(Nodo *&lista){
     }
     cout << "\n" << endl;
     cout<< "LOCALES MOSTRADOS: "<<i-1 <<endl;
+    cout << "\n\n" << endl;
 };

@@ -14,7 +14,7 @@
 
     AXIOMAS:
     codigoSucursal > 0
-    provincia (Buenos_Aires por default)
+    provincia
     cantidadArticulos => 0
     monto >= 0
     metros > 0
@@ -51,13 +51,8 @@ struct Local{
 };
 
 
-//CONSTRUCTORES
-/*Local crearLocal();*/
-
-
 //DESTRUCTOR
 void destruirLocal(Local *local);
-
 
 
 //GETTERS Y SETTERS

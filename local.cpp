@@ -16,55 +16,13 @@ using namespace std;
 
     AXIOMAS:
     codigoSucursal > 0
-    provincia (Buenos_Aires por default)
+    provincia
     cantidadArticulos => 0
     monto >= 0
     metros > 0
     casaMatriz (codigoSucursal del local desde que se maneja todo)
 */
 /********************************************************************************************************************************/
-
-//struct LocalStruct{
-//
-//    int codigoSucursal;
-//	tProvincia provincia;
-//	int cantidadArticulos;
-//	float monto;
-//	float metros;
-//	int casaMatriz;
-//
-//};
-
-//Constructores
-//Constructor para que el usuario pueda crear locales
-/*Local crearLocal(){
-
-    struct LocalStruct* Local = new LocalStruct;
-
-    Local->codigoSucursal    = 1;
-    Local->provincia         = Buenos_Aires;
-    Local->cantidadArticulos = 1;
-    Local->monto             = 0;
-    Local->metros            = 1;
-    Local->casaMatriz        = 1;
-
-    return Local;
-}*/
-
-//Constructor para crear locales cuando se lee el archivo
-//Local crearLocal(int codigoSucursal, tProvincia provincia, int cantidadArticulos, float monto, float metros, int casaMatriz){
-//
-//    struct LocalStruct* Local = new LocalStruct;
-//
-//    Local->codigoSucursal    = codigoSucursal;
-//    Local->provincia         = provincia;
-//    Local->cantidadArticulos = cantidadArticulos;
-//    Local->monto             = monto;
-//    Local->metros            = metros;
-//    Local->casaMatriz        = casaMatriz;
-//
-//    return Local;
-//}
 
 //Destructor
 void destruirLocal(Local* local){
