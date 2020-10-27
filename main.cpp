@@ -2,7 +2,6 @@
 #include <cstdio>
 #include <iomanip>
 
-
 #include "menu.h"
 
 using namespace std;

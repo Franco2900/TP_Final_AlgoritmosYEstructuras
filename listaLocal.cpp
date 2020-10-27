@@ -1,31 +1,14 @@
 #include <iostream>
 #include <cstdio>
-//#include <dirent.h>
-//#include <fstream>
 #include <string>
 #include <vector>
 #include <iomanip>
-
 
 #include "local.h"
 #include "listaLocal.h"
 
 using namespace std;
 
-//CONSTRUCTOR
-void Constructor(Nodo &lista, Local &dato);
-
-//DESTRUCTOR
-void Destructor(Nodo &lista);
-
-//Getters y Setters
-Local getDato(Nodo &lista);
-void setDato(Nodo &lista, Local &dato);
-
-Nodo getSiguiente(Nodo &lista);
-void setDato(Nodo &lista, Nodo *siguiente);
-
-//METODOS
 void insertarLista(Nodo *&lista, Local *local){
     Nodo * nuevo = new Nodo(local);
     Nodo * aux1 = lista;
@@ -95,7 +78,34 @@ void insertXArt(Nodo *&lista, Local *local){
     }
     nuevo->siguiente = aux1;
 };
-void mostrarLista(Nodo *&lista){
+
+void mostrarTotal(Nodo *&lista, int opc){
+    Nodo * actual = new Nodo();
+    actual = lista;
+
+    float total = 0;
+    while(actual != NULL){
+        if(opc==1)total = total + actual->dato->monto;
+        if(opc==2)total = total + actual->dato->cantidadArticulos;
+        actual = actual->siguiente;
+    }
+
+    if(opc==1){cout<< "\nTotal de facturacion: " << total << endl;}
+    if(opc==2){cout<< "\nTotal de articulos vendidos: " << total << endl;}
+};
+
+
+void mostrarLocal(Local* local){
+    cout << "Codigo sucursal: "     << local->codigoSucursal    << endl;
+    cout << "Provincia: "           << local->provincia         << endl;
+    cout << "Cantidad Articulos: "  << local->cantidadArticulos << endl;
+    cout << "Monto: "               << local->monto             << endl;
+    cout << "Metros: "              << local->metros            << endl;
+    cout << "Casa Matriz: "         << local->casaMatriz        << endl;
+}
+
+
+void mostrarLista(Nodo *&lista, int opc){
     int i =1;
     Nodo * actual = new Nodo();
     actual = lista;
@@ -107,6 +117,9 @@ void mostrarLista(Nodo *&lista){
        actual = actual->siguiente;
        i++;
     }
+
+    mostrarTotal(lista, opc);
+
     cout << "\n" << endl;
     cout<< "LOCALES MOSTRADOS: "<<i-1 <<endl;
     cout << "\n\n" << endl;
