@@ -47,30 +47,30 @@
 	<iostream>
 	"local.h"
 
-1603480188 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\local.cpp
+1603762720 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\local.cpp
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	<iostream>
 	"local.h"
 
-1603480188 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\local.h
+1603762720 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\local.h
 	<string>
 
-1602701607 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\main.cpp
+1603824234 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\main.cpp
 	<iostream>
 	<cstdio>
 	<iomanip>
 	"menu.h"
 
-1602701607 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\menu.h
+1603757148 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\menu.h
 	<string>
 	"listaLocal.h"
 
-1602701607 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\listalocal.h
+1603824978 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\listalocal.h
 	"local.h"
 
-1603218816 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\carga.cpp
+1603758622 source:c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\carga.cpp
 	<iostream>
 	<cstdio>
 	<dirent.h>
@@ -81,7 +81,7 @@
 	"listaLocal.h"
 	"local.h"
 
-1602701607 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\carga.h
+1603757148 c:\users\franco\desktop\facultad\algoritmos y estructuras de datos\tp final\tp_final_algoritmosyestructuras\carga.h
 	<vector>
 	<string>
 	"listaLocal.h"

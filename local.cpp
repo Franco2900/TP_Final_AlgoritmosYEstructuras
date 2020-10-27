@@ -78,15 +78,3 @@ void setCasaMatriz(Local* local, int casaMatriz){
     if(casaMatriz > 0) local->casaMatriz = casaMatriz;
 }
 
-/********************************************************************************************************************************/
-
-//Métodos
-
-void mostrarLocal(Local* local){
-    cout << "Codigo sucursal: "     << local->codigoSucursal    << endl;
-    cout << "Provincia: "           << local->provincia         << endl;
-    cout << "Cantidad Articulos: "  << local->cantidadArticulos << endl;
-    cout << "Monto: "               << local->monto             << endl;
-    cout << "Metros: "              << local->metros            << endl;
-    cout << "Casa Matriz: "         << local->casaMatriz        << endl;
-}

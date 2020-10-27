@@ -74,10 +74,6 @@ void setMetros(Local *local, float metros);
 int getCasaMatriz(Local *local);
 void setCasaMatriz(Local *local, int casaMatriz);
 
-/********************************************************************************************************************************/
-
-//MÉTODOS
-void mostrarLocal(Local *local);
 
 
 #endif // LOCAL_H_INCLUDED

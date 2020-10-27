@@ -17,7 +17,7 @@ void rankingAllProvFA(Nodo *&lista, vector<string> prov, int opc){ //Crea un ran
         Nodo* ranking = rankingProvFA(lista, prov[i], opc);
         cout << "##########################################"<<endl;
         cout << "Ranking de la provincia "<<prov[i]<<endl;
-        mostrarLista(ranking);
+        mostrarLista(ranking, opc);
 
     }
     system("pause");

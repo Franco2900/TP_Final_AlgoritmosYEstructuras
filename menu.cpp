@@ -85,14 +85,14 @@ void menuRankingFacYArtVend(Nodo*& listaLocales, int opc){
         if(opcion == 99){
             system("CLS");
             Nodo* rankingNac = rankingNacFA(listaLocales, opc);
-            mostrarLista(rankingNac);
+            mostrarLista(rankingNac, opc);
             system("pause");
             system("CLS");
         }
         if(opcion >=1 && opcion<=provincias.size()){
             system("CLS");
             Nodo* rankingProv = rankingProvFA(listaLocales, provincias[opcion-1], opc);
-            mostrarLista(rankingProv);
+            mostrarLista(rankingProv, opc);
             system("pause");
             system("CLS");
         }
